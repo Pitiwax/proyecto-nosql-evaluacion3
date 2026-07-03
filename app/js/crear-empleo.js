@@ -2,7 +2,7 @@ window.onload = function () {
     cargarUsuariosEnSelect();
 };
 
-// Función para poblar el menú desplegable con los usuarios reales de Atlas
+// Función para el menú desplegable
 async function cargarUsuariosEnSelect() {
     try {
         const response = await fetch('http://localhost:3000/obtenerUsuarios');
@@ -11,8 +11,8 @@ async function cargarUsuariosEnSelect() {
         const select = document.getElementById('selectUsuario');
         usuarios.forEach(user => {
             const opcion = document.createElement('option');
-            opcion.value = user._id; // Guardamos el ID real de la base de datos para la relación
-            opcion.textContent = `${user.nombre} (${user.rut})`; // Mostramos nombre y RUT en pantalla
+            opcion.value = user._id; 
+            opcion.textContent = `${user.nombre} (${user.rut})`;
             select.appendChild(opcion);
         });
     } catch (error) {
@@ -24,7 +24,7 @@ async function cargarUsuariosEnSelect() {
 async function guardarNuevoEmpleo() {
     const formulario = document.getElementById('formularioEmpleo');
     
-    // Validamos de forma simple que se haya seleccionado un usuario y llenado lo obligatorio
+    
     if (!formulario.checkValidity()) {
         alert('Por favor complete todos los campos obligatorios del empleo.');
         return;
