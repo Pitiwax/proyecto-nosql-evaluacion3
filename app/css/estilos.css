@@ -1,0 +1,15 @@
+.navbar{
+    margin-bottom: 20px;
+}
+
+.formulario{
+    border: solid 1px rgb(200, 199, 201);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.alerta{
+    border: solid 2px red;
+    background-color: rgb(255, 205, 205);
+    color: red;
+}
